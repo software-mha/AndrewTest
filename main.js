@@ -45,9 +45,8 @@ scene.add(cube);
 function animate() {
     cube.rotation.x += cubeRotatingSpeed;
     cube.rotation.y += cubeRotatingSpeed;
-
-    requestAnimationFrame(animate);
     renderer.render(scene, camera);
+    requestAnimationFrame(animate);
 }
 
 animate();
