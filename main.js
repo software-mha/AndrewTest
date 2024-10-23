@@ -34,7 +34,18 @@ window.addEventListener("resize", () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshBasicMaterial({
+  wireframe:true,
+});
+const cube = new THREE.Mesh(geometry, material);
+const cubeRotatingSpeed = 0.01;
+scene.add(cube);
+
 function animate() {
+    cube.rotation.x += cubeRotatingSpeed;
+    cube.rotation.y += cubeRotatingSpeed;
+
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
